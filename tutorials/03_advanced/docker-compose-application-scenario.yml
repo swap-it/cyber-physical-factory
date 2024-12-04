@@ -1,0 +1,191 @@
+services:
+
+  ###################
+  # common components
+  ###################
+
+  Dashboard:
+    image: ghcr.io/swap-it/cyberphysicalfactory/dashboard:latest 
+    ports:
+      - 8080:8080
+
+  Assignment_Agent:
+    image: ghcr.io/swap-it/cyberphysicalfactory/assignment-agent:latest
+    ports:
+      - 6000:6000
+
+  Device_Registry:
+    image: ghcr.io/swap-it/cyberphysicalfactory/device-registry:latest
+    ports:
+      - 8000:8000
+
+  Execution_Engine:
+    image: ghcr.io/swap-it/cyberphysicalfactory/execution-engine:latest
+    ports:
+      - 8081:8081
+      - 3000:3000
+    volumes:
+        - "./pfdl:/app/pfdl"
+    
+
+  ################
+  # module servers
+  ################
+
+  Module_Server_SeamHex:
+    image: ghcr.io/swap-it/cyberphysicalfactory/module-server:latest
+    ports:
+        - 14841:14841
+    volumes:
+        - "./assets:/opt/assets"
+        - "./modules:/opt/module-server"
+    command: ["/opt/module-server/seamhex_service.py"]
+
+  Module_Server_Maho:
+    image: ghcr.io/swap-it/cyberphysicalfactory/module-server:latest
+    ports:
+        - 14842:14842
+    volumes:
+        - "./assets:/opt/assets"
+        - "./modules:/opt/module-server"
+    command: ["/opt/module-server/maho_service.py"]
+
+  Module_Server_DMU:
+    image: ghcr.io/swap-it/cyberphysicalfactory/module-server:latest
+    ports:
+        - 14843:14843
+    volumes:
+        - "./assets:/opt/assets"
+        - "./modules:/opt/module-server"
+    command: ["/opt/module-server/dmu_service.py"]
+
+  Module_Server_Comau:
+    image: ghcr.io/swap-it/cyberphysicalfactory/module-server:latest 
+    ports:
+        - 14844:14844
+    volumes:
+        - "./assets:/opt/assets"
+        - "./modules:/opt/module-server"
+    command: ["/opt/module-server/comau_service.py"]
+
+  Module_Server_CMM:
+    image: ghcr.io/swap-it/cyberphysicalfactory/module-server:latest
+    ports:
+        - 14845:14845
+    volumes:
+        - "./assets:/opt/assets"
+        - "./modules:/opt/module-server"
+    command: ["/opt/module-server/cmm_service.py"]
+
+  Module_Server_BioiC:
+    image: ghcr.io/swap-it/cyberphysicalfactory/module-server:latest
+    ports:
+        - 14846:14846
+    volumes:
+        - "./assets:/opt/assets"
+        - "./modules:/opt/module-server"
+    command: ["/opt/module-server/bioic_service.py"]
+
+
+  # ###############
+  # # skill servers
+  # ###############
+
+  Skill_Server_SeamHex:
+    hostname: seamhex
+    image: ghcr.io/swap-it/cyberphysicalfactory/skill-server:latest
+    ports:
+      - "4841:4840"
+    volumes:
+      - ./skills:/usr/skill_server/skills
+    command: ["start_skill_server.py",--machine, SeamHex]
+
+  Skill_Server_Maho:
+    hostname: maho
+    image: ghcr.io/swap-it/cyberphysicalfactory/skill-server:latest
+    ports:
+      - "4842:4840"
+    volumes:
+      - ./skills:/usr/skill_server/skills
+    command: ["start_skill_server.py",--machine, Maho]
+
+  Skill_Server_DMU:
+    hostname: dmu
+    image: ghcr.io/swap-it/cyberphysicalfactory/skill-server:latest
+    ports:
+      - "4843:4840"
+    volumes:
+      - ./skills:/usr/skill_server/skills
+    command: ["start_skill_server.py",--machine, DMU]
+
+  Skill_Server_Comau:
+    hostname: comau
+    image: ghcr.io/swap-it/cyberphysicalfactory/skill-server:latest
+    ports:
+      - "4844:4840"
+    volumes:
+      - ./skills:/usr/skill_server/skills
+    command: ["start_skill_server.py",--machine, Comau]
+
+  Skill_Server_CMM:
+    hostname: cmm
+    image: ghcr.io/swap-it/cyberphysicalfactory/skill-server:latest
+    ports:
+      - "4845:4840"
+    volumes:
+      - ./skills:/usr/skill_server/skills
+    command: ["start_skill_server.py",--machine, CMM]
+
+  Skill_Server_BioiC:
+    hostname: bioic
+    image: ghcr.io/swap-it/cyberphysicalfactory/skill-server:latest
+    ports:
+      - "4846:4840"
+    volumes:
+      - ./skills:/usr/skill_server/skills
+    command: ["start_skill_server.py",--machine, BioiC]    
+
+  Skill_Server_AGV:
+    hostname: agv
+    image: ghcr.io/swap-it/cyberphysicalfactory/skill-server:latest
+    ports:
+      - "4847:4840"
+    volumes:
+      - ./skills:/usr/skill_server/skills
+    command: ["start_skill_server.py",--machine, AGV]
+
+  Skill_Server_RoboOperator:
+    hostname: robooperator
+    image: ghcr.io/swap-it/cyberphysicalfactory/skill-server:latest
+    ports:
+      - "4848:4840"
+    volumes:
+      - ./skills:/usr/skill_server/skills
+    command: ["start_skill_server.py",--machine, RoboOperator]
+
+  Skill_Server_VisionRoboOperator:
+    hostname: visionrobooperator
+    image: ghcr.io/swap-it/cyberphysicalfactory/skill-server:latest
+    ports:
+      - "4849:4840"
+    volumes:
+      - ./skills:/usr/skill_server/skills
+    command: ["start_skill_server.py",--machine, VisionRoboOperator]
+
+  Skill_Server_VisionCMM:
+    hostname: visioncmm
+    image: ghcr.io/swap-it/cyberphysicalfactory/skill-server:latest
+    ports:
+      - "4850:4840"
+    volumes:
+      - ./skills:/usr/skill_server/skills
+    command: ["start_skill_server.py",--machine, VisionCMM]
+
+  Skill_Server_VisionBioiC:
+    hostname: visionbioic
+    image: ghcr.io/swap-it/cyberphysicalfactory/skill-server:latest
+    ports:
+      - "4851:4840"
+    volumes:
+      - ./skills:/usr/skill_server/skills
+    command: ["start_skill_server.py",--machine, VisionBioiC]

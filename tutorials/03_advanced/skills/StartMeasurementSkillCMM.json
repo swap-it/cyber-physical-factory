@@ -1,0 +1,21 @@
+{
+    "strName": "StartMeasurementSkill",
+    "strType": "StartMeasurementSkill",
+    "strGroup": "",
+    "strDescription": "",
+    "iParameterCount": 2,
+    "astParameters": [
+        {
+            "strName": "WorkpieceID",
+            "strValue": "",
+            "strUnit": "uid",
+            "strDescr": ""
+        },
+        {
+            "strName": "MeasurementProgramm",
+            "strValue": "",
+            "strUnit": "uid",
+            "strDescr": ""
+        }
+    ]
+}

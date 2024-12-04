@@ -1,0 +1,41 @@
+{
+    "application_name": "Maho",
+    "resource_ip": "Module_Server_Maho",
+    "port": "14842",
+    "module_type": "MillingModuleType",
+    "module_name": "MahoModule",
+    "service_name": "MillingService",
+    "device_registry": "opc.tcp://Device_Registry_Virtual:8000",
+    "registry_subscriptions": [
+        {
+            "object": "State"
+        },
+        {
+            "object": "Capabilities"
+        }
+    ],
+    "Capabilities": [
+        {
+            "variable_name": "milling_precision",
+            "variable_type": "numeric",
+            "variable_value": "0.1",
+            "relational_operator": "GreaterOrEqual"
+        },
+        {
+            "variable_name": "costs",
+            "variable_type": "numeric",
+            "variable_value": "100",
+            "relational_operator": "Greater"
+        }
+    ],
+    "channels": "100",
+    "sessions": "100",
+    "namespace": "https://cps.iwu.fraunhofer.de/UA/CpsDemo",
+    "input_params": {
+        "part_id": "string",
+        "nc_program": "string"
+    },
+    "output_param": {
+        "success": "boolean"
+    }
+}

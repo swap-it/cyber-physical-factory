@@ -1,0 +1,21 @@
+{
+    "strName": "StartConfigurationSkill",
+    "strType": "StartConfigurationSkill",
+    "strGroup": "",
+    "strDescription": "",
+    "iParameterCount": 2,
+    "astParameters": [
+        {
+            "strName": "WorkpieceID",
+            "strValue": "",
+            "strUnit": "uid",
+            "strDescr": ""
+        },
+        {
+            "strName": "CNCProgramFilename",
+            "strValue": "",
+            "strUnit": "uid",
+            "strDescr": ""
+        }
+    ]
+}

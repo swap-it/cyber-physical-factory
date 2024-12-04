@@ -1,0 +1,10 @@
+services:
+
+  Skill_Server_Robot:
+    hostname: robot
+    image: ghcr.io/swap-it/cyberphysicalfactory/skill-server:latest
+    ports:
+      - "4841:4840"
+    volumes:
+      - ./skills:/usr/skill_server/skills
+    command: ["start_skill_server.py",--machine, Robot]

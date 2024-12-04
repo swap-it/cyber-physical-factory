@@ -1,0 +1,41 @@
+{
+    "application_name": "DMU",
+    "resource_ip": "Module_Server_DMU",
+    "port": "14843",
+    "module_type": "MillingModuleType",
+    "module_name": "DMUModule",
+    "service_name": "MillingService",
+    "device_registry": "opc.tcp://Device_Registry:8000",
+    "registry_subscriptions": [
+        {
+            "object": "State"
+        },
+        {
+            "object": "Capabilities"
+        }
+    ],
+    "Capabilities": [
+        {
+            "variable_name": "milling_precision",
+            "variable_type": "numeric",
+            "variable_value": "0.01",
+            "relational_operator": "GreaterOrEqual"
+        },
+        {
+            "variable_name": "costs",
+            "variable_type": "numeric",
+            "variable_value": "1000",
+            "relational_operator": "Greater"
+        }
+    ],
+    "channels": "100",
+    "sessions": "100",
+    "namespace": "https://cps.iwu.fraunhofer.de/UA/CpsDemo",
+    "input_params": {
+        "part_id": "string",
+        "nc_program": "string"
+    },
+    "output_param": {
+        "success": "boolean"
+    }
+}

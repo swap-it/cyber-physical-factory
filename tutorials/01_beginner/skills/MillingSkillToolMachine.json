@@ -1,0 +1,15 @@
+{
+    "strName": "MillingSkill",
+    "strType": "Milling",
+    "strGroup": "",
+    "strDescription": "Skill to mill a part",
+    "iParameterCount": 1,
+    "astParameters": [
+        {
+            "strName": "file_path",
+            "strValue": "test/",
+            "strUnit": "",
+            "strDescr": ""
+        }
+    ]
+}

@@ -1,0 +1,42 @@
+{
+    "application_name": "Robot",
+    "resource_ip": "Module_Server_Robot",
+    "port": "14841",
+    "module_type": "PickModuleType",
+    "module_name": "RobotModule",
+    "service_name": "PickService",
+    "device_registry": "opc.tcp://Device_Registry:8000",
+    "registry_subscriptions": [
+        {
+            "object": "State"
+        },
+        {
+            "object": "Capabilities"
+        }
+    ],
+    "Capabilities": [
+        {
+            "variable_name": "payload",
+            "variable_type": "numeric",
+            "variable_value": "10",
+            "relational_operator": "SmallerOrEqual"
+        },
+        {
+            "variable_name": "costs",
+            "variable_type": "numeric",
+            "variable_value": "100",
+            "relational_operator": "Greater"
+        }
+    ],
+    "channels": "100",
+    "sessions": "100",
+    "namespace": "https://cps.iwu.fraunhofer.de/UA/CpsDemo",
+    "input_params": {
+        "x": "number",
+        "y": "number",
+        "z": "number"
+    },
+    "output_param": {
+        "success": "boolean"
+    }
+}

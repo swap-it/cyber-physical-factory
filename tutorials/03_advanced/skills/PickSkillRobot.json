@@ -1,0 +1,27 @@
+{
+    "strName": "PickSkill",
+    "strType": "Pick",
+    "strGroup": "",
+    "strDescription": "Skill to pick a part",
+    "iParameterCount": 3,
+    "astParameters": [
+        {
+            "strName": "x",
+            "strValue": "0.0",
+            "strUnit": "",
+            "strDescr": ""
+        },
+        {
+            "strName": "y",
+            "strValue": "0.0",
+            "strUnit": "",
+            "strDescr": ""
+        },
+        {
+            "strName": "z",
+            "strValue": "0.0",
+            "strUnit": "",
+            "strDescr": ""
+        }
+    ]
+}

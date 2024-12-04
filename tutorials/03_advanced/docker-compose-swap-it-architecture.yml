@@ -1,0 +1,24 @@
+services:
+
+  Dashboard:
+    image: ghcr.io/swap-it/cyberphysicalfactory/dashboard:latest 
+    ports:
+      - 8080:8080
+
+  Assignment_Agent:
+    image: ghcr.io/swap-it/cyberphysicalfactory/assignment-agent:latest
+    ports:
+      - 6000:6000
+
+  Device_Registry:
+    image: ghcr.io/swap-it/cyberphysicalfactory/device-registry:latest
+    ports:
+      - 8000:8000
+
+  Execution_Engine:
+    image: ghcr.io/swap-it/cyberphysicalfactory/execution-engine:latest
+    ports:
+      - 8081:8081
+      - 3000:3000
+    volumes:
+        - "./pfdl:/app/pfdl"

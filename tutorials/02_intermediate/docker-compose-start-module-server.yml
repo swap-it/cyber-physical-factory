@@ -1,0 +1,10 @@
+services:
+
+  Module_Server_Robot:
+    image: ghcr.io/swap-it/cyberphysicalfactory/module-server:latest
+    ports:
+        - 14841:14841
+    volumes:
+        - "./assets:/opt/assets"
+        - "./modules:/opt/module-server"
+    command: ["/opt/module-server/robot.py"]

@@ -1,0 +1,41 @@
+{
+    "application_name": "SeamHex",
+    "resource_ip": "Module_Server_SeamHex",
+    "port": "14841",
+    "module_type": "PrintingModuleType",
+    "module_name": "SeamHexModule",
+    "service_name": "PrintingService",
+    "device_registry": "opc.tcp://Device_Registry:8000",
+    "registry_subscriptions": [
+        {
+            "object": "State"
+        },
+        {
+            "object": "Capabilities"
+        }
+    ],
+    "Capabilities": [
+        {
+            "variable_name": "printing_precision",
+            "variable_type": "numeric",
+            "variable_value": "1",
+            "relational_operator": "GreaterOrEqual"
+        },
+        {
+            "variable_name": "costs",
+            "variable_type": "numeric",
+            "variable_value": "100",
+            "relational_operator": "Greater"
+        }
+    ],
+    "channels": "100",
+    "sessions": "100",
+    "namespace": "https://cps.iwu.fraunhofer.de/UA/CpsDemo",
+    "input_params": {
+        "part_id": "string",
+        "nc_program": "string"
+    },
+    "output_param": {
+        "success": "boolean"
+    }
+}

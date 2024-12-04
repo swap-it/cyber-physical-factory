@@ -1,0 +1,8 @@
+{
+    "strName": "DetectBarcodeSkill",
+    "strType": "DetectBarcodeSkill",
+    "strGroup": "",
+    "strDescription": "",
+    "iParameterCount": 0,
+    "astParameters": []
+}

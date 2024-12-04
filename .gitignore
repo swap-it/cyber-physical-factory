@@ -1,0 +1,4 @@
+.devcontainer/
+**/_build/
+**/build/
+**/_static/video/

@@ -1,0 +1,6 @@
+services:
+  simulation-web-server:
+    image: ghcr.io/swap-it/cyberphysicalfactory/simulation-web-server:latest
+    ports:
+      - "4000:4000"
+    command: python python/web_server.py

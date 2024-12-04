@@ -1,0 +1,61 @@
+# ##################
+# general data types
+# ##################
+
+Struct PfdlBoolean
+    value: boolean
+End 
+Struct PfdlNumber
+    value: number
+End
+Struct PfdlString
+    value: string
+End
+
+# #########################
+# service struct data types
+# #########################
+
+# pick service
+Struct PickParameters
+    x: PfdlNumber
+    y: PfdlNumber
+    z: PfdlNumber
+End
+
+# ##################
+# process definition
+# ##################
+
+Task productionTask
+    pickingTask
+        In
+            PickParameters
+            {
+                "x" : {
+                    "value": 1.1
+                },
+                "y" : {
+                    "value": 0.5
+                },
+                "z" : {
+                    "value": 1.3
+                }
+            }
+        Out
+            succes: PfdlBoolean
+End
+ 
+Task pickingTask
+    In
+        pick_params: PickParameters
+    PickService
+        In
+            pick_params.x
+            pick_params.y
+            pick_params.z
+        Out
+            success: PfdlBoolean
+    Out
+        success
+End
