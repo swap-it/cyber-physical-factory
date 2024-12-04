@@ -1,0 +1,157 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Architecture &mdash; SWAP-IT Cyber-Physical Factory 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=8d563738"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Getting Started" href="04_0_getting_started.html" />
+    <link rel="prev" title="Introduction to Use Case" href="02_overview_introduction.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SWAP-IT Cyber-Physical Factory
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="02_overview_introduction.html">Introduction to Use Case</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Architecture</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#interface-between-swap-it-architecture-and-shop-floor">Interface between SWAP-IT architecture and Shop Floor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#skill-based-control-focused-approach-to-provide-unified-interface">Skill-based control focused approach to provide unified interface</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="04_0_getting_started.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="05_how_to_guides.html">How-to-Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_related_projects.html">Related Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_contact.html">Contact</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SWAP-IT Cyber-Physical Factory</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Architecture</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/rst/03_architecture.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="architecture">
+<h1>Architecture<a class="headerlink" href="#architecture" title="Link to this heading"></a></h1>
+<section id="interface-between-swap-it-architecture-and-shop-floor">
+<h2>Interface between SWAP-IT architecture and Shop Floor<a class="headerlink" href="#interface-between-swap-it-architecture-and-shop-floor" title="Link to this heading"></a></h2>
+<p>The architectural setup of the success story <em>Cyber-Physical Factory</em> is based on the <a class="reference external" href="https://swap-it.github.io/demo-scenario/swpa_it_sw.html">SWAP-IT Software Modules</a>.
+This section describes the approach to developing a universal interface between the SWAP-IT architecture and the shop floor.</p>
+<p>As depicted in the figure below, the application consists of a set of loosely coupled software components. The figure depicts all software components that are currently available as open source projects, or will be published as open source projects within 2024. The development status and the interaction of these components are also provided.</p>
+<figure class="align-center" id="id1">
+<img alt="../_images/Architecture_Connection.PNG" src="../_images/Architecture_Connection.PNG" />
+<figcaption>
+<p><span class="caption-text">SWAP-IT software modules and there interaction. Marked in orange is the interface of the SWAP-IT architecture to the shop floor assets.</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The orange box illustrates the interface of the SWAP-IT architecture to the shop floor assets. Each resource on a shop floor is defined as a SWAP-IT asset (<em>Use-Case Specific Modules</em>). Such assets can be defined by utilizing the SWAP-IT <a class="reference external" href="https://github.com/FraunhoferIOSB/swap-it-common-information-model">Common Information Model</a>.
+The challenge for many shop floors is that new machines and systems cannot always be easily integrated into the SWAP-IT architecture as the control system infrastructure usually is very heterogeneous. In addition, the set-up of a resource server is not a simple task.</p>
+</section>
+<section id="skill-based-control-focused-approach-to-provide-unified-interface">
+<h2>Skill-based control focused approach to provide unified interface<a class="headerlink" href="#skill-based-control-focused-approach-to-provide-unified-interface" title="Link to this heading"></a></h2>
+<p>The work of the Fraunhofer IWU focused on the development of an unified interface between the SWAP-IT architecture and the heterogeneous control system infrastructure. The following figure depicts how the skill-based control framework is used as an interface between the SWAP-IT architecture and both virtual and real assets.</p>
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=5,IE=9" ><![endif]-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>architecture.drawio.html</title>
+<meta charset="utf-8"/>
+</head>
+<body>
+<div class="mxgraph" style="max-width:100%;border:1px solid transparent;" data-mxgraph="{&quot;highlight&quot;:&quot;#0000ff&quot;,&quot;nav&quot;:true,&quot;resize&quot;:true,&quot;xml&quot;:&quot;&lt;mxfile host=\&quot;Electron\&quot; agent=\&quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.5 Chrome/126.0.6478.183 Electron/31.3.0 Safari/537.36\&quot; version=\&quot;24.7.5\&quot;&gt;&lt;diagram name=\&quot;Seite-1\&quot; id=\&quot;t3l92aeks34pVWnKhCmq\&quot;&gt;&lt;mxGraphModel dx=\&quot;1005\&quot; dy=\&quot;588\&quot; grid=\&quot;1\&quot; gridSize=\&quot;10\&quot; guides=\&quot;1\&quot; tooltips=\&quot;1\&quot; connect=\&quot;1\&quot; arrows=\&quot;1\&quot; fold=\&quot;1\&quot; page=\&quot;1\&quot; pageScale=\&quot;1\&quot; pageWidth=\&quot;827\&quot; pageHeight=\&quot;583\&quot; math=\&quot;0\&quot; shadow=\&quot;0\&quot;&gt;&lt;root&gt;&lt;mxCell id=\&quot;0\&quot;/&gt;&lt;mxCell id=\&quot;1\&quot; parent=\&quot;0\&quot;/&gt;&lt;mxCell id=\&quot;-iBsF-Sqbgt-6m3x510g-19\&quot; value=\&quot;\&quot; style=\&quot;rounded=0;whiteSpace=wrap;html=1;strokeColor=none;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;90\&quot; y=\&quot;100\&quot; width=\&quot;660\&quot; height=\&quot;390\&quot; as=\&quot;geometry\&quot;/&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;8MsSBSbyNtluzsbMLF_h-15\&quot; value=\&quot;Python-Interface\&quot; style=\&quot;rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;direction=east;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;280\&quot; y=\&quot;120\&quot; width=\&quot;280\&quot; height=\&quot;139\&quot; as=\&quot;geometry\&quot;/&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;-iBsF-Sqbgt-6m3x510g-16\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=halfCircle;endFill=0;startSize=10;strokeWidth=2;\&quot; edge=\&quot;1\&quot; parent=\&quot;1\&quot; source=\&quot;8MsSBSbyNtluzsbMLF_h-3\&quot; target=\&quot;8MsSBSbyNtluzsbMLF_h-15\&quot;&gt;&lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot;&gt;&lt;Array as=\&quot;points\&quot;&gt;&lt;mxPoint x=\&quot;359\&quot; y=\&quot;240\&quot;/&gt;&lt;mxPoint x=\&quot;419\&quot; y=\&quot;240\&quot;/&gt;&lt;/Array&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;8MsSBSbyNtluzsbMLF_h-3\&quot; value=\&quot;&amp;lt;div&amp;gt;Precompiled&amp;lt;/div&amp;gt;Resource&amp;lt;div&amp;gt;Server&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;(OPC UA)&amp;lt;/div&amp;gt;\&quot; style=\&quot;whiteSpace=wrap;html=1;aspect=fixed;labelBackgroundColor=default;direction=east;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;320\&quot; y=\&quot;150\&quot; width=\&quot;80\&quot; height=\&quot;80\&quot; as=\&quot;geometry\&quot;/&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;8MsSBSbyNtluzsbMLF_h-17\&quot; value=\&quot;Shop Floor\&quot; style=\&quot;rounded=0;whiteSpace=wrap;html=1;verticalAlign=bottom;align=right;spacingRight=10;spacingTop=5;direction=east;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;280\&quot; y=\&quot;330\&quot; width=\&quot;280\&quot; height=\&quot;150\&quot; as=\&quot;geometry\&quot;/&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;8MsSBSbyNtluzsbMLF_h-16\&quot; value=\&quot;SBC&amp;lt;div&amp;gt;&amp;lt;i&amp;gt;serve Skills&amp;lt;/i&amp;gt;&amp;lt;/div&amp;gt;\&quot; style=\&quot;rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;align=left;spacingLeft=15;spacingTop=5;direction=east;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;300\&quot; y=\&quot;320\&quot; width=\&quot;240\&quot; height=\&quot;140\&quot; as=\&quot;geometry\&quot;/&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;8MsSBSbyNtluzsbMLF_h-7\&quot; value=\&quot;\&quot; style=\&quot;group;labelBackgroundColor=default;spacingRight=5;direction=east;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot; connectable=\&quot;0\&quot;&gt;&lt;mxGeometry x=\&quot;439\&quot; y=\&quot;369.34000000000003\&quot; width=\&quot;80\&quot; height=\&quot;83.32\&quot; as=\&quot;geometry\&quot;/&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;8MsSBSbyNtluzsbMLF_h-5\&quot; value=\&quot;Virtual\&quot; style=\&quot;whiteSpace=wrap;html=1;aspect=fixed;verticalAlign=top;align=right;labelBackgroundColor=default;spacingRight=5;direction=east;\&quot; parent=\&quot;8MsSBSbyNtluzsbMLF_h-7\&quot; vertex=\&quot;1\&quot;&gt;&lt;mxGeometry width=\&quot;80\&quot; height=\&quot;80\&quot; as=\&quot;geometry\&quot;/&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;8MsSBSbyNtluzsbMLF_h-28\&quot; value=\&quot;\&quot; style=\&quot;shape=mxgraph.cisco.computers_and_peripherals.pc;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;direction=east;\&quot; parent=\&quot;8MsSBSbyNtluzsbMLF_h-7\&quot; vertex=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;15.5\&quot; y=\&quot;30\&quot; width=\&quot;49\&quot; height=\&quot;40\&quot; as=\&quot;geometry\&quot;/&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;8MsSBSbyNtluzsbMLF_h-8\&quot; value=\&quot;\&quot; style=\&quot;group;align=right;labelBackgroundColor=default;spacingRight=5;direction=east;\&quot; parent=\&quot;1\&quot; vertex=\&quot;1\&quot; connectable=\&quot;0\&quot;&gt;&lt;mxGeometry x=\&quot;319\&quot; y=\&quot;369.34000000000003\&quot; width=\&quot;80\&quot; height=\&quot;83.32\&quot; as=\&quot;geometry\&quot;/&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;8MsSBSbyNtluzsbMLF_h-30\&quot; value=\&quot;\&quot; style=\&quot;group;direction=east;\&quot; parent=\&quot;8MsSBSbyNtluzsbMLF_h-8\&quot; vertex=\&quot;1\&quot; connectable=\&quot;0\&quot;&gt;&lt;mxGeometry width=\&quot;80\&quot; height=\&quot;80\&quot; as=\&quot;geometry\&quot;/&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;8MsSBSbyNtluzsbMLF_h-9\&quot; value=\&quot;Real\&quot; style=\&quot;whiteSpace=wrap;html=1;aspect=fixed;verticalAlign=top;align=right;labelBackgroundColor=default;spacingRight=5;direction=east;\&quot; parent=\&quot;8MsSBSbyNtluzsbMLF_h-30\&quot; vertex=\&quot;1\&quot;&gt;&lt;mxGeometry width=\&quot;80\&quot; height=\&quot;80\&quot; as=\&quot;geometry\&quot;/&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;8MsSBSbyNtluzsbMLF_h-29\&quot; value=\&quot;\&quot; style=\&quot;image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/other/Defender_Industrial_Robot.svg;direction=east;\&quot; parent=\&quot;8MsSBSbyNtluzsbMLF_h-30\&quot; vertex=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;19.46\&quot; y=\&quot;20\&quot; width=\&quot;41.81\&quot; height=\&quot;55.66\&quot; as=\&quot;geometry\&quot;/&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;-iBsF-Sqbgt-6m3x510g-17\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=halfCircle;endFill=0;startSize=6;strokeWidth=2;\&quot; edge=\&quot;1\&quot; parent=\&quot;1\&quot; source=\&quot;-iBsF-Sqbgt-6m3x510g-11\&quot; target=\&quot;8MsSBSbyNtluzsbMLF_h-15\&quot;&gt;&lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot;&gt;&lt;mxPoint x=\&quot;419\&quot; y=\&quot;260\&quot; as=\&quot;targetPoint\&quot;/&gt;&lt;Array as=\&quot;points\&quot;&gt;&lt;mxPoint x=\&quot;479\&quot; y=\&quot;240\&quot;/&gt;&lt;mxPoint x=\&quot;419\&quot; y=\&quot;240\&quot;/&gt;&lt;/Array&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;-iBsF-Sqbgt-6m3x510g-11\&quot; value=\&quot;&amp;lt;div&amp;gt;Precompiled&amp;lt;/div&amp;gt;Resource&amp;lt;div&amp;gt;Server&amp;lt;/div&amp;gt;&amp;lt;div&amp;gt;(OPC UA)&amp;lt;/div&amp;gt;\&quot; style=\&quot;whiteSpace=wrap;html=1;aspect=fixed;labelBackgroundColor=default;direction=east;\&quot; vertex=\&quot;1\&quot; parent=\&quot;1\&quot;&gt;&lt;mxGeometry x=\&quot;440\&quot; y=\&quot;150\&quot; width=\&quot;80\&quot; height=\&quot;80\&quot; as=\&quot;geometry\&quot;/&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;-iBsF-Sqbgt-6m3x510g-14\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;endArrow=halfCircle;endFill=0;strokeWidth=2;\&quot; edge=\&quot;1\&quot; parent=\&quot;1\&quot; source=\&quot;8MsSBSbyNtluzsbMLF_h-9\&quot;&gt;&lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot;&gt;&lt;mxPoint x=\&quot;420\&quot; y=\&quot;320\&quot; as=\&quot;targetPoint\&quot;/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;-iBsF-Sqbgt-6m3x510g-15\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;endArrow=halfCircle;endFill=0;strokeWidth=2;\&quot; edge=\&quot;1\&quot; parent=\&quot;1\&quot; source=\&quot;8MsSBSbyNtluzsbMLF_h-5\&quot;&gt;&lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot;&gt;&lt;mxPoint x=\&quot;420\&quot; y=\&quot;320\&quot; as=\&quot;targetPoint\&quot;/&gt;&lt;Array as=\&quot;points\&quot;&gt;&lt;mxPoint x=\&quot;420\&quot; y=\&quot;409\&quot;/&gt;&lt;mxPoint x=\&quot;420\&quot; y=\&quot;320\&quot;/&gt;&lt;/Array&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;-iBsF-Sqbgt-6m3x510g-12\&quot; style=\&quot;edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=6;startArrow=oval;startFill=1;endArrow=oval;endFill=1;targetPerimeterSpacing=8;sourcePerimeterSpacing=8;\&quot; edge=\&quot;1\&quot; parent=\&quot;1\&quot; source=\&quot;8MsSBSbyNtluzsbMLF_h-15\&quot; target=\&quot;8MsSBSbyNtluzsbMLF_h-16\&quot;&gt;&lt;mxGeometry relative=\&quot;1\&quot; as=\&quot;geometry\&quot;/&gt;&lt;/mxCell&gt;&lt;mxCell id=\&quot;-iBsF-Sqbgt-6m3x510g-20\&quot; value=\&quot;&amp;lt;i&amp;gt;call Skills&amp;lt;/i&amp;gt;\&quot; style=\&quot;edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];\&quot; vertex=\&quot;1\&quot; connectable=\&quot;0\&quot; parent=\&quot;-iBsF-Sqbgt-6m3x510g-12\&quot;&gt;&lt;mxGeometry x=\&quot;-0.02\&quot; y=\&quot;-1\&quot; relative=\&quot;1\&quot; as=\&quot;geometry\&quot;&gt;&lt;mxPoint as=\&quot;offset\&quot;/&gt;&lt;/mxGeometry&gt;&lt;/mxCell&gt;&lt;/root&gt;&lt;/mxGraphModel&gt;&lt;/diagram&gt;&lt;/mxfile&gt;&quot;,&quot;toolbar&quot;:&quot;pages zoom layers lightbox&quot;,&quot;page&quot;:0}"></div>
+<script type="text/javascript" src="https://app.diagrams.net/js/viewer-static.min.js"></script>
+</body>
+</html>
+<div style="text-align: center;">
+   Provision of unified interface to heterogeneous control systems by application of skill-based control framework (SBC).
+</div>
+<br></br><p>The interface between the shop floor and the SWAP-IT architecture shown above is a generic universal machine connector. It comprises two separate elements. On the shop floor side, it consists of assets (robots, machine tools, AGVs, etc.) that are provided with the skill-based control framework. The framework provides certain skills via an OPC-UA interface. On the SWAP-IT side, the connector consists of a precompiled resource server based on the Common Information Model, which is provided as a Python package. Using a JSON file, an OPC-UA server compatible with the SWAP-IT architecture can easily be set up in a Python script. Callback functions can be defined for these servers, in which the skills of the assets are called via the SBC framework.</p>
+<p>All assets are modularized, followed by assigning the functions of the assets to the modules as parameterizable skills.
+Object-oriented programming ensures uniform states and interfaces. In the SBC, a superclass as a template for an unified asset module is defined. New asset modules are thus created by inheritance of the template module. This approach enables consistent handling, monitoring, state control and error management of all the different modules in an asset. The communication between the modules of different controllers is realized via various manufacturer- and programming language-independent interfaces, such as OPC-UA. To provide the asset functions, such as <em>move</em> of a robot or <em>close</em> of a gripper, parameterizable skills for modules are defined.  In programming, the bottom-up approach can be used to implement the available functions for
+each asset as skills in the module control. The control programmer should implement not only the asset functions that are necessary for the overall automation solution, but also the functions that the asset can perform independently of other assets. This guarantees the flexible usability of all functionalities of the assets.</p>
+<p>Another important aspect is the possibility to parameterize the skills to adapt the individual asset functions to different process tasks. For example, the target position can be specified as a parameter for a robot movement to enable configurability by the operator. Due to the modularization, an orchestration system can communicate with all available module skills using different communication interfaces like both vendor-specific and vendor-independent ones. Complex process sequences can be configured by parameterizing and combining skills into reusable steps, whereby the operator can flexibly change individual parameters of skills or entire steps at any time. The <em>Execution Engine</em> functions as such an orchestration system.</p>
+<p>The SBC allows all available services and skills of a real system to be queried via OPC UA. A Python module is generated for each asset, which contains the services and skills as methods of an asset object that also implements communication with the respective asset. To connect the SBC to the SWAP-IT architecture a python wrapper is built around the <a class="reference external" href="https://github.com/FraunhoferIOSB/swap-it-open62541-server-template">open62541 server template</a>, which allows the execution of python scripts by the <em>Execution Engine</em>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="02_overview_introduction.html" class="btn btn-neutral float-left" title="Introduction to Use Case" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="04_0_getting_started.html" class="btn btn-neutral float-right" title="Getting Started" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Fraunhofer IWU.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>
