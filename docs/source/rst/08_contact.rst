@@ -4,12 +4,12 @@ Contact
 Support/Issues
 ==============
 
-- https://github.com/swap-it/swap-it-cyberphysicalfactory/issues
+- https://github.com/swap-it/cyber-physical-factory/issues
 
 Pull Requests
 ==============
 
-- https://github.com/swap-it/swap-it-cyberphysicalfactory/pulls
+- https://github.com/swap-it/cyber-physical-factory/pulls
 
 
 Private Contact
