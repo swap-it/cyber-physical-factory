@@ -1,0 +1,883 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Advanced &mdash; SWAP-IT Cyber-Physical Factory 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=8d563738"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="How-to-Guides" href="05_how_to_guides.html" />
+    <link rel="prev" title="Intermediate" href="04_2_intermediate.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            SWAP-IT Cyber-Physical Factory
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="02_overview_introduction.html">Introduction to Use Case</a></li>
+<li class="toctree-l1"><a class="reference internal" href="03_architecture.html">Architecture</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="04_0_getting_started.html">Getting Started</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="04_0_getting_started.html#requirements-and-installation">Requirements and Installation</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="04_0_getting_started.html#tutorials">Tutorials</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="04_1_beginner.html">Beginner</a></li>
+<li class="toctree-l3"><a class="reference internal" href="04_2_intermediate.html">Intermediate</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Advanced</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#set-up-of-swap-it-software-architecture">Set up of SWAP-IT software architecture</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#model-simple-process-and-execute-the-first-order">Model simple process and execute the first order</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#model-the-application-scenario-process">Model the application scenario process</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#demonstration-of-resource-allocation-at-runtime">Demonstration of resource allocation at runtime</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="05_how_to_guides.html">How-to-Guides</a></li>
+<li class="toctree-l1"><a class="reference internal" href="06_related_projects.html">Related Projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="07_glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="08_contact.html">Contact</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">SWAP-IT Cyber-Physical Factory</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="04_0_getting_started.html">Getting Started</a></li>
+      <li class="breadcrumb-item active">Advanced</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/rst/04_3_advanced.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="advanced">
+<h1>Advanced<a class="headerlink" href="#advanced" title="Link to this heading"></a></h1>
+<p>At this point we have set up a skill server to serve skills and a module server to call these skills from a SWAP-IT compatible instance.
+In the third tutorial, we will now implement the SWAP-IT software architecture and model a simple process in a PFDL file to demonstrate the basic procedure. We will then model the application scenario as described in <a class="reference internal" href="02_overview_introduction.html"><span class="doc">Introduction to Use Case</span></a>.</p>
+<section id="set-up-of-swap-it-software-architecture">
+<h2>Set up of SWAP-IT software architecture<a class="headerlink" href="#set-up-of-swap-it-software-architecture" title="Link to this heading"></a></h2>
+<p>The SWAP-IT software modules can all be started together with the following docker compose command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>compose<span class="w"> </span>-f<span class="w"> </span>docker-compose-swap-it-architecture.yml<span class="w"> </span>-p<span class="w"> </span>advanced<span class="w"> </span>up<span class="w"> </span>-d
+</pre></div>
+</div>
+<p>The invoked YAML file looks like this:</p>
+<div class="highlight-YAML notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nt">services</span><span class="p">:</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="w">    </span><span class="nt">Dashboard</span><span class="p">:</span>
+<span class="linenos"> 4</span><span class="w">        </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/swap-it/cyberphysicalfactory/dashboard:latest</span>
+<span class="linenos"> 5</span><span class="w">        </span><span class="nt">ports</span><span class="p">:</span>
+<span class="linenos"> 6</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8080:8080</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span><span class="w">    </span><span class="nt">Assignment_Agent</span><span class="p">:</span>
+<span class="linenos"> 9</span><span class="w">        </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/swap-it/cyberphysicalfactory/assignment-agent:latest</span>
+<span class="linenos">10</span><span class="w">        </span><span class="nt">ports</span><span class="p">:</span>
+<span class="linenos">11</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">6000:6000</span>
+<span class="linenos">12</span>
+<span class="linenos">13</span><span class="w">    </span><span class="nt">Device_Registry</span><span class="p">:</span>
+<span class="linenos">14</span><span class="w">        </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/swap-it/cyberphysicalfactory/device-registry:latest</span>
+<span class="linenos">15</span><span class="w">        </span><span class="nt">ports</span><span class="p">:</span>
+<span class="linenos">16</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8000:8000</span>
+<span class="linenos">17</span>
+<span class="linenos">18</span><span class="w">    </span><span class="nt">Execution_Engine</span><span class="p">:</span>
+<span class="linenos">19</span><span class="w">        </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/swap-it/cyberphysicalfactory/execution-engine:latest</span>
+<span class="linenos">20</span><span class="w">        </span><span class="nt">ports</span><span class="p">:</span>
+<span class="linenos">21</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8081:8081</span>
+<span class="linenos">22</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3000:3000</span>
+<span class="linenos">23</span><span class="w">        </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="linenos">24</span><span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;./pfdl:/app/pfdl&quot;</span>
+</pre></div>
+</div>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">Explanation of code</span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 12.5%" />
+<col style="width: 87.5%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>line number</p></th>
+<th class="head"><p>meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>3-6</p></td>
+<td><p><a class="reference external" href="https://github.com/iml130/swap-it-dashboard">Dashboard</a> is started at port 8080</p></td>
+</tr>
+<tr class="row-odd"><td><p>8-11</p></td>
+<td><p><a class="reference external" href="https://github.com/FraunhoferIOSB/swap-it-execution-engine">Assignment Agent</a> is started at port 6000</p></td>
+</tr>
+<tr class="row-even"><td><p>13-16</p></td>
+<td><p><a class="reference external" href="https://github.com/FraunhoferIOSB/swap-it-registry-module">Device Registry</a> is started at port 8000</p></td>
+</tr>
+<tr class="row-odd"><td><p>18-24</p></td>
+<td><p><a class="reference external" href="https://github.com/FraunhoferIOSB/swap-it-execution-engine">Execution Engine</a> is started at port 8081</p></td>
+</tr>
+<tr class="row-even"><td><p>23-24</p></td>
+<td><p>the local folder <em>pfdl</em> is mounted to the container</p></td>
+</tr>
+</tbody>
+</table>
+<p>All linked SWAP-IT software modules can manually be configured and set up by cloning and executing the Python code. For the sake of simplicity they are all provided for this tutorial as docker images.</p>
+<p>The container list in <em>Docker Desktop</em> should look like follows at this point:</p>
+<figure class="align-center" id="id2">
+<img alt="../_images/docker_desktop_advanced_swapit.PNG" src="../_images/docker_desktop_advanced_swapit.PNG" />
+<figcaption>
+<p><span class="caption-text"><em>Docker Desktop</em> view for SWAP-IT container</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The dashboard can be accessed in the browser at port 8080 of the localhost.</p>
+<figure class="align-center" id="id3">
+<img alt="../_images/dashboard_advanced.PNG" src="../_images/dashboard_advanced.PNG" />
+<figcaption>
+<p><span class="caption-text"><em>Dashboard</em> view in browser</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>So far there are no orders to be processed. In the next step, we will create and execute the first order.</p>
+</section>
+<section id="model-simple-process-and-execute-the-first-order">
+<h2>Model simple process and execute the first order<a class="headerlink" href="#model-simple-process-and-execute-the-first-order" title="Link to this heading"></a></h2>
+<p>Before we model the first simple example process, we restart the skill server and module server from the last two tutorials. To do so, we execute the docker compose command from the last tutorial again:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>compose<span class="w"> </span>-f<span class="w"> </span>docker-compose-start-skill-and-module-server.yml<span class="w"> </span>-p<span class="w"> </span>advanced<span class="w"> </span>up<span class="w"> </span>-d
+</pre></div>
+</div>
+<p>But since the device registry is running now we will first change the flag in line 8 of the Python module <em>robot.py</em> in the <em>modules</em> folder to <em>True</em>. Now the <em>Module_Server_Robot</em> will register with the device registry and make himself available to the <em>Assignment Agent</em>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">import</span> <span class="nn">swapit_module_server</span>
+<span class="linenos">2</span><span class="kn">from</span> <span class="nn">assets.RobotSkills</span> <span class="kn">import</span> <span class="n">PickSkill</span>
+<span class="linenos">3</span>
+<span class="linenos">4</span><span class="k">def</span> <span class="nf">pick_service</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">z</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="linenos">5</span>    <span class="n">PickSkill</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+<span class="linenos">6</span>    <span class="k">return</span> <span class="kc">True</span>
+<span class="linenos">7</span>
+<span class="linenos">8</span><span class="n">swapit_module_server</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;/opt/module-server/configs/robot.json&quot;</span><span class="p">,</span> <span class="n">pick_service</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To model a process as a PFDL that only consists of the <em>PickService</em>, we can proceed as shown here:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">Struct</span> <span class="n">PfdlBoolean</span>
+<span class="linenos"> 2</span>    <span class="n">value</span><span class="p">:</span> <span class="n">boolean</span>
+<span class="linenos"> 3</span><span class="n">End</span>
+<span class="linenos"> 4</span><span class="n">Struct</span> <span class="n">PfdlNumber</span>
+<span class="linenos"> 5</span>    <span class="n">value</span><span class="p">:</span> <span class="n">number</span>
+<span class="linenos"> 6</span><span class="n">End</span>
+<span class="linenos"> 7</span><span class="n">Struct</span> <span class="n">PfdlString</span>
+<span class="linenos"> 8</span>    <span class="n">value</span><span class="p">:</span> <span class="n">string</span>
+<span class="linenos"> 9</span><span class="n">End</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span><span class="n">Struct</span> <span class="n">PickParameters</span>
+<span class="linenos">12</span>    <span class="n">x</span><span class="p">:</span> <span class="n">PfdlNumber</span>
+<span class="linenos">13</span>    <span class="n">y</span><span class="p">:</span> <span class="n">PfdlNumber</span>
+<span class="linenos">14</span>    <span class="n">z</span><span class="p">:</span> <span class="n">PfdlNumber</span>
+<span class="linenos">15</span><span class="n">End</span>
+<span class="linenos">16</span>
+<span class="linenos">17</span><span class="n">Task</span> <span class="n">productionTask</span>
+<span class="linenos">18</span>    <span class="n">pickingTask</span>
+<span class="linenos">19</span>        <span class="n">In</span>
+<span class="linenos">20</span>            <span class="n">PickParameters</span>
+<span class="linenos">21</span>            <span class="p">{</span>
+<span class="linenos">22</span>                <span class="s2">&quot;x&quot;</span> <span class="p">:</span> <span class="p">{</span>
+<span class="linenos">23</span>                    <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="mf">1.1</span>
+<span class="linenos">24</span>                <span class="p">},</span>
+<span class="linenos">25</span>                <span class="s2">&quot;y&quot;</span> <span class="p">:</span> <span class="p">{</span>
+<span class="linenos">26</span>                    <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="mf">0.5</span>
+<span class="linenos">27</span>                <span class="p">},</span>
+<span class="linenos">28</span>                <span class="s2">&quot;z&quot;</span> <span class="p">:</span> <span class="p">{</span>
+<span class="linenos">29</span>                    <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="mf">1.3</span>
+<span class="linenos">30</span>                <span class="p">}</span>
+<span class="linenos">31</span>            <span class="p">}</span>
+<span class="linenos">32</span>        <span class="n">Out</span>
+<span class="linenos">33</span>            <span class="n">succes</span><span class="p">:</span> <span class="n">PfdlBoolean</span>
+<span class="linenos">34</span><span class="n">End</span>
+<span class="linenos">35</span>
+<span class="linenos">36</span><span class="n">Task</span> <span class="n">pickingTask</span>
+<span class="linenos">37</span>    <span class="n">In</span>
+<span class="linenos">38</span>        <span class="n">pick_params</span><span class="p">:</span> <span class="n">PickParameters</span>
+<span class="linenos">39</span>    <span class="n">PickService</span>
+<span class="linenos">40</span>        <span class="n">In</span>
+<span class="linenos">41</span>            <span class="n">pick_params</span><span class="o">.</span><span class="n">x</span>
+<span class="linenos">42</span>            <span class="n">pick_params</span><span class="o">.</span><span class="n">y</span>
+<span class="linenos">43</span>            <span class="n">pick_params</span><span class="o">.</span><span class="n">z</span>
+<span class="linenos">44</span>        <span class="n">Out</span>
+<span class="linenos">45</span>            <span class="n">success</span><span class="p">:</span> <span class="n">PfdlBoolean</span>
+<span class="linenos">46</span>    <span class="n">Out</span>
+<span class="linenos">47</span>        <span class="n">success</span>
+<span class="linenos">48</span><span class="n">End</span>
+</pre></div>
+</div>
+<table class="docutils align-default" id="id4">
+<caption><span class="caption-text">Explanation of code</span><a class="headerlink" href="#id4" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 12.5%" />
+<col style="width: 87.5%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>line number</p></th>
+<th class="head"><p>meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1-9</p></td>
+<td><div class="line-block">
+<div class="line">definition of basic PFDL data types (this section of a PFDL file always has to be</div>
+<div class="line">included like this, if these data types are to be used)</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>11-15</p></td>
+<td><div class="line-block">
+<div class="line">definition of service input parameters (they correspond to the input parameter</div>
+<div class="line">definition in the module server configuration JSON file)</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>17-34</p></td>
+<td><p>definition of <em>productionTask</em> with passing the input parameter for the <em>pickingTask</em></p></td>
+</tr>
+<tr class="row-odd"><td><p>36-48</p></td>
+<td><p>definition of <em>pickingTask</em> (calls the robot’s <em>PickService</em>)</p></td>
+</tr>
+</tbody>
+</table>
+<p>Since in the <em>Execution Engine</em> docker container a <a class="reference external" href="https://fastapi.tiangolo.com/">FastAPI Server</a> is running we can execute any PFDL file now that was first stored in the <em>pfdl</em> folder and then mounted to the <em>Execution Engine</em> docker container by executing a <em>curl</em> command in the following way:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">&quot;http://127.0.0.1:8081/execute_function/&quot;</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;{\&quot;pfdl_filepath\&quot;: \&quot;pfdl/simple_demo.pfdl\&quot;}&quot;</span>
+</pre></div>
+</div>
+<p>If we now take a look at the <em>Dashboard</em> again, we can see that a new order according to our PFDL file has been submitted and has already been executed (this can be determined by the fact that the black token is already in the <em>PickService</em>).</p>
+<figure class="align-center" id="id5">
+<img alt="../_images/dashboard_simple_pfdl_advanced.PNG" src="../_images/dashboard_simple_pfdl_advanced.PNG" />
+<figcaption>
+<p><span class="caption-text"><em>Dashboard</em> view with order state and Petri Net after executing the <em>simple_demo.pfdl</em></span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>A look at the module and skill server using the OPC UA client <em>UaExpert</em> reveals that both servers are in the <em>execute</em> state.</p>
+<figure class="align-center" id="id6">
+<img alt="../_images/uaexpert_simple_pfdl_advanced.PNG" src="../_images/uaexpert_simple_pfdl_advanced.PNG" />
+<figcaption>
+<p><span class="caption-text"><em>UaExpert</em> view on skill and module server after executing the <em>simple_demo.pfdl</em></span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>For now, we end the process by manually setting the boolean variable <em>complete</em> to <em>True</em> in the client with a mouse click. This transfers both servers to the <em>completed</em> state. The module server immediately goes back to the state (4) <em>idle</em> and is waiting for the next call.</p>
+<figure class="align-center" id="id7">
+<img alt="../_images/uaexpert_simple_pfdl_completed_advanced.PNG" src="../_images/uaexpert_simple_pfdl_completed_advanced.PNG" />
+<figcaption>
+<p><span class="caption-text"><em>UaExpert</em> view on skill and module server after terminating the process</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>In the <em>Dashboard</em> the token leaves the <em>PickService</em> and <em>The order is finished!</em> is reported:</p>
+<figure class="align-center" id="id8">
+<img alt="../_images/dashboard_simple_pfdl_completed_advanced.PNG" src="../_images/dashboard_simple_pfdl_completed_advanced.PNG" />
+<figcaption>
+<p><span class="caption-text"><em>Dashboard</em> view with order state and Petri Net after terminating the process</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="model-the-application-scenario-process">
+<h2>Model the application scenario process<a class="headerlink" href="#model-the-application-scenario-process" title="Link to this heading"></a></h2>
+<p>Now that the basic procedure of modeling a process with the PFDL and setting up the SWAP-IT architecture software modules has been demonstrated with an simple example, we will enter the next level and model the application scenario process.
+The following YAML file combines all previous implementations in one file and starts all skill and module servers for the machines involved in the execution of the application scenario:</p>
+<div class="highlight-YAML notranslate"><div class="highlight"><pre><span></span><span class="linenos">  1</span><span class="nt">services</span><span class="p">:</span>
+<span class="linenos">  2</span>
+<span class="linenos">  3</span><span class="nt">Dashboard</span><span class="p">:</span>
+<span class="linenos">  4</span><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/swap-it/cyberphysicalfactory/dashboard:latest</span>
+<span class="linenos">  5</span><span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="linenos">  6</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8080:8080</span>
+<span class="linenos">  7</span>
+<span class="linenos">  8</span><span class="nt">Assignment_Agent</span><span class="p">:</span>
+<span class="linenos">  9</span><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/swap-it/cyberphysicalfactory/assignment-agent:latest</span>
+<span class="linenos"> 10</span><span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="linenos"> 11</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">6000:6000</span>
+<span class="linenos"> 12</span>
+<span class="linenos"> 13</span><span class="nt">Device_Registry</span><span class="p">:</span>
+<span class="linenos"> 14</span><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/swap-it/cyberphysicalfactory/device-registry:latest</span>
+<span class="linenos"> 15</span><span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="linenos"> 16</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8000:8000</span>
+<span class="linenos"> 17</span>
+<span class="linenos"> 18</span><span class="nt">Execution_Engine</span><span class="p">:</span>
+<span class="linenos"> 19</span><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/swap-it/cyberphysicalfactory/execution-engine:latest</span>
+<span class="linenos"> 20</span><span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="linenos"> 21</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8081:8081</span>
+<span class="linenos"> 22</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3000:3000</span>
+<span class="linenos"> 23</span><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="linenos"> 24</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;./pfdl:/app/pfdl&quot;</span>
+<span class="linenos"> 25</span>
+<span class="linenos"> 26</span><span class="nt">Module_Server_SeamHex</span><span class="p">:</span>
+<span class="linenos"> 27</span><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/swap-it/cyberphysicalfactory/module-server:latest</span>
+<span class="linenos"> 28</span><span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="linenos"> 29</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">14841:14841</span>
+<span class="linenos"> 30</span><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="linenos"> 31</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;./assets:/opt/assets&quot;</span>
+<span class="linenos"> 32</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;./modules:/opt/module-server&quot;</span>
+<span class="linenos"> 33</span><span class="w">    </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;/opt/module-server/seamhex_service.py&quot;</span><span class="p p-Indicator">]</span>
+<span class="linenos"> 34</span>
+<span class="linenos"> 35</span><span class="nt">Module_Server_Maho</span><span class="p">:</span>
+<span class="linenos"> 36</span><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/swap-it/cyberphysicalfactory/module-server:latest</span>
+<span class="linenos"> 37</span><span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="linenos"> 38</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">14842:14842</span>
+<span class="linenos"> 39</span><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="linenos"> 40</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;./assets:/opt/assets&quot;</span>
+<span class="linenos"> 41</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;./modules:/opt/module-server&quot;</span>
+<span class="linenos"> 42</span><span class="w">    </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;/opt/module-server/maho_service.py&quot;</span><span class="p p-Indicator">]</span>
+<span class="linenos"> 43</span>
+<span class="linenos"> 44</span><span class="nt">Module_Server_DMU</span><span class="p">:</span>
+<span class="linenos"> 45</span><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/swap-it/cyberphysicalfactory/module-server:latest</span>
+<span class="linenos"> 46</span><span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="linenos"> 47</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">14843:14843</span>
+<span class="linenos"> 48</span><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="linenos"> 49</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;./assets:/opt/assets&quot;</span>
+<span class="linenos"> 50</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;./modules:/opt/module-server&quot;</span>
+<span class="linenos"> 51</span><span class="w">    </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;/opt/module-server/dmu_service.py&quot;</span><span class="p p-Indicator">]</span>
+<span class="linenos"> 52</span>
+<span class="linenos"> 53</span><span class="nt">Module_Server_Comau</span><span class="p">:</span>
+<span class="linenos"> 54</span><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/swap-it/cyberphysicalfactory/module-server:latest</span>
+<span class="linenos"> 55</span><span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="linenos"> 56</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">14844:14844</span>
+<span class="linenos"> 57</span><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="linenos"> 58</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;./assets:/opt/assets&quot;</span>
+<span class="linenos"> 59</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;./modules:/opt/module-server&quot;</span>
+<span class="linenos"> 60</span><span class="w">    </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;/opt/module-server/comau_service.py&quot;</span><span class="p p-Indicator">]</span>
+<span class="linenos"> 61</span>
+<span class="linenos"> 62</span><span class="nt">Module_Server_CMM</span><span class="p">:</span>
+<span class="linenos"> 63</span><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/swap-it/cyberphysicalfactory/module-server:latest</span>
+<span class="linenos"> 64</span><span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="linenos"> 65</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">14845:14845</span>
+<span class="linenos"> 66</span><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="linenos"> 67</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;./assets:/opt/assets&quot;</span>
+<span class="linenos"> 68</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;./modules:/opt/module-server&quot;</span>
+<span class="linenos"> 69</span><span class="w">    </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;/opt/module-server/cmm_service.py&quot;</span><span class="p p-Indicator">]</span>
+<span class="linenos"> 70</span>
+<span class="linenos"> 71</span><span class="nt">Module_Server_BioiC</span><span class="p">:</span>
+<span class="linenos"> 72</span><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/swap-it/cyberphysicalfactory/module-server:latest</span>
+<span class="linenos"> 73</span><span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="linenos"> 74</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">14846:14846</span>
+<span class="linenos"> 75</span><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="linenos"> 76</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;./assets:/opt/assets&quot;</span>
+<span class="linenos"> 77</span><span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;./modules:/opt/module-server&quot;</span>
+<span class="linenos"> 78</span><span class="w">    </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;/opt/module-server/bioic_service.py&quot;</span><span class="p p-Indicator">]</span>
+<span class="linenos"> 79</span>
+<span class="linenos"> 80</span><span class="nt">Skill_Server_SeamHex</span><span class="p">:</span>
+<span class="linenos"> 81</span><span class="w">    </span><span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">seamhex</span>
+<span class="linenos"> 82</span><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/swap-it/cyberphysicalfactory/skill-server:latest</span>
+<span class="linenos"> 83</span><span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="linenos"> 84</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;4841:4840&quot;</span>
+<span class="linenos"> 85</span><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="linenos"> 86</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./skills:/usr/skill_server/skills</span>
+<span class="linenos"> 87</span><span class="w">    </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;start_skill_server.py&quot;</span><span class="p p-Indicator">,</span><span class="nv">--machine</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">SeamHex</span><span class="p p-Indicator">]</span>
+<span class="linenos"> 88</span>
+<span class="linenos"> 89</span><span class="nt">Skill_Server_Maho</span><span class="p">:</span>
+<span class="linenos"> 90</span><span class="w">    </span><span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">maho</span>
+<span class="linenos"> 91</span><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/swap-it/cyberphysicalfactory/skill-server:latest</span>
+<span class="linenos"> 92</span><span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="linenos"> 93</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;4842:4840&quot;</span>
+<span class="linenos"> 94</span><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="linenos"> 95</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./skills:/usr/skill_server/skills</span>
+<span class="linenos"> 96</span><span class="w">    </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;start_skill_server.py&quot;</span><span class="p p-Indicator">,</span><span class="nv">--machine</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">Maho</span><span class="p p-Indicator">]</span>
+<span class="linenos"> 97</span>
+<span class="linenos"> 98</span><span class="nt">Skill_Server_DMU</span><span class="p">:</span>
+<span class="linenos"> 99</span><span class="w">    </span><span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dmu</span>
+<span class="linenos">100</span><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/swap-it/cyberphysicalfactory/skill-server:latest</span>
+<span class="linenos">101</span><span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="linenos">102</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;4843:4840&quot;</span>
+<span class="linenos">103</span><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="linenos">104</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./skills:/usr/skill_server/skills</span>
+<span class="linenos">105</span><span class="w">    </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;start_skill_server.py&quot;</span><span class="p p-Indicator">,</span><span class="nv">--machine</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">DMU</span><span class="p p-Indicator">]</span>
+<span class="linenos">106</span>
+<span class="linenos">107</span><span class="nt">Skill_Server_Comau</span><span class="p">:</span>
+<span class="linenos">108</span><span class="w">    </span><span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">comau</span>
+<span class="linenos">109</span><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/swap-it/cyberphysicalfactory/skill-server:latest</span>
+<span class="linenos">110</span><span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="linenos">111</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;4844:4840&quot;</span>
+<span class="linenos">112</span><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="linenos">113</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./skills:/usr/skill_server/skills</span>
+<span class="linenos">114</span><span class="w">    </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;start_skill_server.py&quot;</span><span class="p p-Indicator">,</span><span class="nv">--machine</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">Comau</span><span class="p p-Indicator">]</span>
+<span class="linenos">115</span>
+<span class="linenos">116</span><span class="nt">Skill_Server_CMM</span><span class="p">:</span>
+<span class="linenos">117</span><span class="w">    </span><span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cmm</span>
+<span class="linenos">118</span><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/swap-it/cyberphysicalfactory/skill-server:latest</span>
+<span class="linenos">119</span><span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="linenos">120</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;4845:4840&quot;</span>
+<span class="linenos">121</span><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="linenos">122</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./skills:/usr/skill_server/skills</span>
+<span class="linenos">123</span><span class="w">    </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;start_skill_server.py&quot;</span><span class="p p-Indicator">,</span><span class="nv">--machine</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">CMM</span><span class="p p-Indicator">]</span>
+<span class="linenos">124</span>
+<span class="linenos">125</span><span class="nt">Skill_Server_BioiC</span><span class="p">:</span>
+<span class="linenos">126</span><span class="w">    </span><span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bioic</span>
+<span class="linenos">127</span><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/swap-it/cyberphysicalfactory/skill-server:latest</span>
+<span class="linenos">128</span><span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="linenos">129</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;4846:4840&quot;</span>
+<span class="linenos">130</span><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="linenos">131</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./skills:/usr/skill_server/skills</span>
+<span class="linenos">132</span><span class="w">    </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;start_skill_server.py&quot;</span><span class="p p-Indicator">,</span><span class="nv">--machine</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">BioiC</span><span class="p p-Indicator">]</span>
+<span class="linenos">133</span>
+<span class="linenos">134</span><span class="nt">Skill_Server_AGV</span><span class="p">:</span>
+<span class="linenos">135</span><span class="w">    </span><span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">agv</span>
+<span class="linenos">136</span><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/swap-it/cyberphysicalfactory/skill-server:latest</span>
+<span class="linenos">137</span><span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="linenos">138</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;4847:4840&quot;</span>
+<span class="linenos">139</span><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="linenos">140</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./skills:/usr/skill_server/skills</span>
+<span class="linenos">141</span><span class="w">    </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;start_skill_server.py&quot;</span><span class="p p-Indicator">,</span><span class="nv">--machine</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">AGV</span><span class="p p-Indicator">]</span>
+<span class="linenos">142</span>
+<span class="linenos">143</span><span class="nt">Skill_Server_RoboOperator</span><span class="p">:</span>
+<span class="linenos">144</span><span class="w">    </span><span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">robooperator</span>
+<span class="linenos">145</span><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/swap-it/cyberphysicalfactory/skill-server:latest</span>
+<span class="linenos">146</span><span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="linenos">147</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;4848:4840&quot;</span>
+<span class="linenos">148</span><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="linenos">149</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./skills:/usr/skill_server/skills</span>
+<span class="linenos">150</span><span class="w">    </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;start_skill_server.py&quot;</span><span class="p p-Indicator">,</span><span class="nv">--machine</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">RoboOperator</span><span class="p p-Indicator">]</span>
+<span class="linenos">151</span>
+<span class="linenos">152</span><span class="nt">Skill_Server_VisionRoboOperator</span><span class="p">:</span>
+<span class="linenos">153</span><span class="w">    </span><span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">visionrobooperator</span>
+<span class="linenos">154</span><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/swap-it/cyberphysicalfactory/skill-server:latest</span>
+<span class="linenos">155</span><span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="linenos">156</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;4849:4840&quot;</span>
+<span class="linenos">157</span><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="linenos">158</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./skills:/usr/skill_server/skills</span>
+<span class="linenos">159</span><span class="w">    </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;start_skill_server.py&quot;</span><span class="p p-Indicator">,</span><span class="nv">--machine</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">VisionRoboOperator</span><span class="p p-Indicator">]</span>
+<span class="linenos">160</span>
+<span class="linenos">161</span><span class="nt">Skill_Server_VisionCMM</span><span class="p">:</span>
+<span class="linenos">162</span><span class="w">    </span><span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">visioncmm</span>
+<span class="linenos">163</span><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/swap-it/cyberphysicalfactory/skill-server:latest</span>
+<span class="linenos">164</span><span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="linenos">165</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;4850:4840&quot;</span>
+<span class="linenos">166</span><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="linenos">167</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./skills:/usr/skill_server/skills</span>
+<span class="linenos">168</span><span class="w">    </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;start_skill_server.py&quot;</span><span class="p p-Indicator">,</span><span class="nv">--machine</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">VisionCMM</span><span class="p p-Indicator">]</span>
+<span class="linenos">169</span>
+<span class="linenos">170</span><span class="nt">Skill_Server_VisionBioiC</span><span class="p">:</span>
+<span class="linenos">171</span><span class="w">    </span><span class="nt">hostname</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">visionbioic</span>
+<span class="linenos">172</span><span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ghcr.io/swap-it/cyberphysicalfactory/skill-server:latest</span>
+<span class="linenos">173</span><span class="w">    </span><span class="nt">ports</span><span class="p">:</span>
+<span class="linenos">174</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;4851:4840&quot;</span>
+<span class="linenos">175</span><span class="w">    </span><span class="nt">volumes</span><span class="p">:</span>
+<span class="linenos">176</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./skills:/usr/skill_server/skills</span>
+<span class="linenos">177</span><span class="w">    </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;start_skill_server.py&quot;</span><span class="p p-Indicator">,</span><span class="nv">--machine</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">VisionBioiC</span><span class="p p-Indicator">]</span>
+</pre></div>
+</div>
+<table class="docutils align-default" id="id9">
+<caption><span class="caption-text">Explanation of code</span><a class="headerlink" href="#id9" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 12.5%" />
+<col style="width: 87.5%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>line number</p></th>
+<th class="head"><p>meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>3-24</p></td>
+<td><p>definition of the SWAP-IT base modules</p></td>
+</tr>
+<tr class="row-odd"><td><p>26-78</p></td>
+<td><div class="line-block">
+<div class="line">definition of module servers for main machines (AGV and Vision modules do not have</div>
+<div class="line">their own module servers, as their skills are implicitly called by the other module</div>
+<div class="line">servers)</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td><p>35-60</p></td>
+<td><div class="line-block">
+<div class="line">for the <em>MillingService</em> three possible machines are provided to demonstrate how</div>
+<div class="line">a suitable asset is selected for a given service at runtime depending on given</div>
+<div class="line">requirements for the specific process step</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>80-177</p></td>
+<td><p>definition of skill servers (AGV and Vision skills are all called by other machines)</p></td>
+</tr>
+</tbody>
+</table>
+<p>Again this YAML file can be executed by running the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>compose<span class="w"> </span>-f<span class="w"> </span>docker-compose-application-scenario.yml<span class="w"> </span>-p<span class="w"> </span>advanced<span class="w"> </span>up<span class="w"> </span>-d
+</pre></div>
+</div>
+<p>With the following <em>curl</em> command, the <em>cps_demo.pfdl</em> is started:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span><span class="s2">&quot;http://127.0.0.1:8081/execute_function/&quot;</span><span class="w"> </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;{\&quot;pfdl_filepath\&quot;: \&quot;pfdl/cps_demo.pfdl\&quot;}&quot;</span>
+</pre></div>
+</div>
+<p>The <em>cps_demo.pfdl</em> looks like follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">  1</span><span class="n">Struct</span> <span class="n">PfdlBoolean</span>
+<span class="linenos">  2</span>    <span class="n">value</span><span class="p">:</span> <span class="n">boolean</span>
+<span class="linenos">  3</span><span class="n">End</span>
+<span class="linenos">  4</span><span class="n">Struct</span> <span class="n">PfdlNumber</span>
+<span class="linenos">  5</span>    <span class="n">value</span><span class="p">:</span> <span class="n">number</span>
+<span class="linenos">  6</span><span class="n">End</span>
+<span class="linenos">  7</span><span class="n">Struct</span> <span class="n">PfdlString</span>
+<span class="linenos">  8</span>    <span class="n">value</span><span class="p">:</span> <span class="n">string</span>
+<span class="linenos">  9</span><span class="n">End</span>
+<span class="linenos"> 10</span>
+<span class="linenos"> 11</span><span class="c1"># printing service</span>
+<span class="linenos"> 12</span><span class="n">Struct</span> <span class="n">PrintingParameters</span>
+<span class="linenos"> 13</span>    <span class="n">part_id</span><span class="p">:</span> <span class="n">PfdlString</span>
+<span class="linenos"> 14</span>    <span class="n">nc_program</span><span class="p">:</span> <span class="n">PfdlString</span>
+<span class="linenos"> 15</span><span class="n">End</span>
+<span class="linenos"> 16</span><span class="n">Struct</span> <span class="n">PrintingService_Capabilities</span>
+<span class="linenos"> 17</span>    <span class="n">printing_precision</span><span class="p">:</span> <span class="n">string</span>
+<span class="linenos"> 18</span><span class="n">End</span>
+<span class="linenos"> 19</span><span class="c1"># milling service</span>
+<span class="linenos"> 20</span><span class="n">Struct</span> <span class="n">MillingParameters</span>
+<span class="linenos"> 21</span>    <span class="n">part_id</span><span class="p">:</span> <span class="n">PfdlString</span>
+<span class="linenos"> 22</span>    <span class="n">nc_program</span><span class="p">:</span> <span class="n">PfdlString</span>
+<span class="linenos"> 23</span><span class="n">End</span>
+<span class="linenos"> 24</span><span class="n">Struct</span> <span class="n">MillingService_Capabilities</span>
+<span class="linenos"> 25</span>    <span class="n">milling_precision</span><span class="p">:</span> <span class="n">string</span>
+<span class="linenos"> 26</span><span class="n">End</span>
+<span class="linenos"> 27</span><span class="c1"># scanning service</span>
+<span class="linenos"> 28</span><span class="n">Struct</span> <span class="n">ScanningParameters</span>
+<span class="linenos"> 29</span>    <span class="n">part_id</span><span class="p">:</span> <span class="n">PfdlString</span>
+<span class="linenos"> 30</span>    <span class="n">nc_program</span><span class="p">:</span> <span class="n">PfdlString</span>
+<span class="linenos"> 31</span><span class="n">End</span>
+<span class="linenos"> 32</span><span class="n">Struct</span> <span class="n">ScanningService_Capabilities</span>
+<span class="linenos"> 33</span>    <span class="n">scanning_precision</span><span class="p">:</span> <span class="n">string</span>
+<span class="linenos"> 34</span><span class="n">End</span>
+<span class="linenos"> 35</span><span class="c1"># assembling service</span>
+<span class="linenos"> 36</span><span class="n">Struct</span> <span class="n">AssemblingParameters</span>
+<span class="linenos"> 37</span>    <span class="n">part_id</span><span class="p">:</span> <span class="n">PfdlString</span>
+<span class="linenos"> 38</span>    <span class="n">color</span><span class="p">:</span> <span class="n">PfdlNumber</span>
+<span class="linenos"> 39</span><span class="n">End</span>
+<span class="linenos"> 40</span><span class="n">Struct</span> <span class="n">AssemblingService_Capabilities</span>
+<span class="linenos"> 41</span>    <span class="n">robot_reach</span><span class="p">:</span> <span class="n">string</span>
+<span class="linenos"> 42</span><span class="n">End</span>
+<span class="linenos"> 43</span>
+<span class="linenos"> 44</span><span class="n">Task</span> <span class="n">productionTask</span>
+<span class="linenos"> 45</span>    <span class="n">printingTask</span>
+<span class="linenos"> 46</span>        <span class="n">In</span>
+<span class="linenos"> 47</span>            <span class="n">PrintingParameters</span>
+<span class="linenos"> 48</span>            <span class="p">{</span>
+<span class="linenos"> 49</span>                <span class="s2">&quot;part_id&quot;</span> <span class="p">:</span> <span class="p">{</span>
+<span class="linenos"> 50</span>                    <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
+<span class="linenos"> 51</span>                <span class="p">},</span>
+<span class="linenos"> 52</span>                <span class="s2">&quot;nc_program&quot;</span> <span class="p">:</span> <span class="p">{</span>
+<span class="linenos"> 53</span>                    <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">data</span><span class="se">\\</span><span class="s2">NC-Files</span><span class="se">\\</span><span class="s2">Test_Skill.nc&quot;</span>
+<span class="linenos"> 54</span>                <span class="p">}</span>
+<span class="linenos"> 55</span>            <span class="p">}</span>
+<span class="linenos"> 56</span>            <span class="n">PrintingService_Capabilities</span>
+<span class="linenos"> 57</span>            <span class="p">{</span>
+<span class="linenos"> 58</span>                <span class="s2">&quot;printing_precision&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
+<span class="linenos"> 59</span>            <span class="p">}</span>
+<span class="linenos"> 60</span>        <span class="n">Out</span>
+<span class="linenos"> 61</span>            <span class="n">succes</span><span class="p">:</span> <span class="n">PfdlBoolean</span>
+<span class="linenos"> 62</span>    <span class="n">millingTask</span>
+<span class="linenos"> 63</span>        <span class="n">In</span>
+<span class="linenos"> 64</span>            <span class="n">MillingParameters</span>
+<span class="linenos"> 65</span>            <span class="p">{</span>
+<span class="linenos"> 66</span>                <span class="s2">&quot;part_id&quot;</span> <span class="p">:</span> <span class="p">{</span>
+<span class="linenos"> 67</span>                    <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
+<span class="linenos"> 68</span>                <span class="p">},</span>
+<span class="linenos"> 69</span>                <span class="s2">&quot;nc_program&quot;</span> <span class="p">:</span> <span class="p">{</span>
+<span class="linenos"> 70</span>                    <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">data</span><span class="se">\\</span><span class="s2">Test.nc&quot;</span>
+<span class="linenos"> 71</span>                <span class="p">}</span>
+<span class="linenos"> 72</span>            <span class="p">}</span>
+<span class="linenos"> 73</span>            <span class="n">MillingService_Capabilities</span>
+<span class="linenos"> 74</span>            <span class="p">{</span>
+<span class="linenos"> 75</span>                <span class="s2">&quot;milling_precision&quot;</span><span class="p">:</span> <span class="s2">&quot;0.05&quot;</span>
+<span class="linenos"> 76</span>            <span class="p">}</span>
+<span class="linenos"> 77</span>        <span class="n">Out</span>
+<span class="linenos"> 78</span>            <span class="n">success</span><span class="p">:</span> <span class="n">PfdlBoolean</span>
+<span class="linenos"> 79</span>    <span class="n">scanningTask</span>
+<span class="linenos"> 80</span>        <span class="n">In</span>
+<span class="linenos"> 81</span>            <span class="n">ScanningParameters</span>
+<span class="linenos"> 82</span>            <span class="p">{</span>
+<span class="linenos"> 83</span>                <span class="s2">&quot;part_id&quot;</span> <span class="p">:</span> <span class="p">{</span>
+<span class="linenos"> 84</span>                    <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
+<span class="linenos"> 85</span>                <span class="p">},</span>
+<span class="linenos"> 86</span>                <span class="s2">&quot;nc_program&quot;</span> <span class="p">:</span> <span class="p">{</span>
+<span class="linenos"> 87</span>                    <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">data</span><span class="se">\\</span><span class="s2">Test.nc&quot;</span>
+<span class="linenos"> 88</span>                <span class="p">}</span>
+<span class="linenos"> 89</span>            <span class="p">}</span>
+<span class="linenos"> 90</span>            <span class="n">ScanningService_Capabilities</span>
+<span class="linenos"> 91</span>            <span class="p">{</span>
+<span class="linenos"> 92</span>                <span class="s2">&quot;scanning_precision&quot;</span><span class="p">:</span> <span class="s2">&quot;0.1&quot;</span>
+<span class="linenos"> 93</span>            <span class="p">}</span>
+<span class="linenos"> 94</span>        <span class="n">Out</span>
+<span class="linenos"> 95</span>            <span class="n">success</span><span class="p">:</span> <span class="n">PfdlBoolean</span>
+<span class="linenos"> 96</span>    <span class="n">assemblingTask</span>
+<span class="linenos"> 97</span>        <span class="n">In</span>
+<span class="linenos"> 98</span>            <span class="n">AssemblingParameters</span>
+<span class="linenos"> 99</span>            <span class="p">{</span>
+<span class="linenos">100</span>                <span class="s2">&quot;part_id&quot;</span> <span class="p">:</span> <span class="p">{</span>
+<span class="linenos">101</span>                    <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
+<span class="linenos">102</span>                <span class="p">},</span>
+<span class="linenos">103</span>                <span class="s2">&quot;color&quot;</span> <span class="p">:</span> <span class="p">{</span>
+<span class="linenos">104</span>                    <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="mi">1</span>
+<span class="linenos">105</span>                <span class="p">}</span>
+<span class="linenos">106</span>            <span class="p">}</span>
+<span class="linenos">107</span>            <span class="n">AssemblingService_Capabilities</span>
+<span class="linenos">108</span>            <span class="p">{</span>
+<span class="linenos">109</span>                <span class="s2">&quot;robot_reach&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
+<span class="linenos">110</span>            <span class="p">}</span>
+<span class="linenos">111</span>        <span class="n">Out</span>
+<span class="linenos">112</span>            <span class="n">success</span><span class="p">:</span> <span class="n">PfdlBoolean</span>
+<span class="linenos">113</span><span class="n">End</span>
+<span class="linenos">114</span>
+<span class="linenos">115</span><span class="n">Task</span> <span class="n">printingTask</span>
+<span class="linenos">116</span>    <span class="n">In</span>
+<span class="linenos">117</span>        <span class="n">printing_params</span><span class="p">:</span> <span class="n">PrintingParameters</span>
+<span class="linenos">118</span>        <span class="n">printing_capabilities</span><span class="p">:</span> <span class="n">PrintingService_Capabilities</span>
+<span class="linenos">119</span>    <span class="n">PrintingService</span>
+<span class="linenos">120</span>        <span class="n">In</span>
+<span class="linenos">121</span>            <span class="n">printing_params</span><span class="o">.</span><span class="n">part_id</span>
+<span class="linenos">122</span>            <span class="n">printing_params</span><span class="o">.</span><span class="n">nc_program</span>
+<span class="linenos">123</span>            <span class="n">printing_capabilities</span>
+<span class="linenos">124</span>        <span class="n">Out</span>
+<span class="linenos">125</span>            <span class="n">success</span><span class="p">:</span> <span class="n">PfdlBoolean</span>
+<span class="linenos">126</span>    <span class="n">Out</span>
+<span class="linenos">127</span>        <span class="n">success</span>
+<span class="linenos">128</span><span class="n">End</span>
+<span class="linenos">129</span>
+<span class="linenos">130</span><span class="n">Task</span> <span class="n">millingTask</span>
+<span class="linenos">131</span>    <span class="n">In</span>
+<span class="linenos">132</span>        <span class="n">milling_params</span><span class="p">:</span> <span class="n">MillingParameters</span>
+<span class="linenos">133</span>        <span class="n">milling_capabilities</span><span class="p">:</span> <span class="n">MillingService_Capabilities</span>
+<span class="linenos">134</span>    <span class="n">MillingService</span>
+<span class="linenos">135</span>        <span class="n">In</span>
+<span class="linenos">136</span>            <span class="n">milling_params</span><span class="o">.</span><span class="n">part_id</span>
+<span class="linenos">137</span>            <span class="n">milling_params</span><span class="o">.</span><span class="n">nc_program</span>
+<span class="linenos">138</span>            <span class="n">milling_capabilities</span>
+<span class="linenos">139</span>        <span class="n">Out</span>
+<span class="linenos">140</span>            <span class="n">success</span><span class="p">:</span> <span class="n">PfdlBoolean</span>
+<span class="linenos">141</span>    <span class="n">Out</span>
+<span class="linenos">142</span>        <span class="n">success</span>
+<span class="linenos">143</span><span class="n">End</span>
+<span class="linenos">144</span>
+<span class="linenos">145</span><span class="n">Task</span> <span class="n">scanningTask</span>
+<span class="linenos">146</span>    <span class="n">In</span>
+<span class="linenos">147</span>        <span class="n">scanning_params</span><span class="p">:</span> <span class="n">ScanningParameters</span>
+<span class="linenos">148</span>        <span class="n">scanning_capabilities</span><span class="p">:</span> <span class="n">ScanningService_Capabilities</span>
+<span class="linenos">149</span>    <span class="n">ScanningService</span>
+<span class="linenos">150</span>        <span class="n">In</span>
+<span class="linenos">151</span>            <span class="n">scanning_params</span><span class="o">.</span><span class="n">part_id</span>
+<span class="linenos">152</span>            <span class="n">scanning_params</span><span class="o">.</span><span class="n">nc_program</span>
+<span class="linenos">153</span>            <span class="n">scanning_capabilities</span>
+<span class="linenos">154</span>        <span class="n">Out</span>
+<span class="linenos">155</span>            <span class="n">success</span><span class="p">:</span> <span class="n">PfdlBoolean</span>
+<span class="linenos">156</span>    <span class="n">Out</span>
+<span class="linenos">157</span>        <span class="n">success</span>
+<span class="linenos">158</span><span class="n">End</span>
+<span class="linenos">159</span>
+<span class="linenos">160</span><span class="n">Task</span> <span class="n">assemblingTask</span>
+<span class="linenos">161</span>    <span class="n">In</span>
+<span class="linenos">162</span>        <span class="n">assembling_params</span><span class="p">:</span> <span class="n">AssemblingParameters</span>
+<span class="linenos">163</span>        <span class="n">assembling_capabilities</span><span class="p">:</span> <span class="n">AssemblingService_Capabilities</span>
+<span class="linenos">164</span>    <span class="n">AssemblingService</span>
+<span class="linenos">165</span>        <span class="n">In</span>
+<span class="linenos">166</span>            <span class="n">assembling_params</span><span class="o">.</span><span class="n">part_id</span>
+<span class="linenos">167</span>            <span class="n">assembling_params</span><span class="o">.</span><span class="n">color</span>
+<span class="linenos">168</span>            <span class="n">assembling_capabilities</span>
+<span class="linenos">169</span>        <span class="n">Out</span>
+<span class="linenos">170</span>            <span class="n">success</span><span class="p">:</span> <span class="n">PfdlBoolean</span>
+<span class="linenos">171</span>    <span class="n">Out</span>
+<span class="linenos">172</span>        <span class="n">success</span>
+<span class="linenos">173</span><span class="n">End</span>
+</pre></div>
+</div>
+<table class="docutils align-default" id="id10">
+<caption><span class="caption-text">Explanation of code</span><a class="headerlink" href="#id10" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 12.5%" />
+<col style="width: 87.5%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>line number</p></th>
+<th class="head"><p>meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1-9</p></td>
+<td><p>definition of basic PFDL data types</p></td>
+</tr>
+<tr class="row-odd"><td><p>11-42</p></td>
+<td><p>definition of service input parameters and asset capabilities</p></td>
+</tr>
+<tr class="row-even"><td><p>44-113</p></td>
+<td><div class="line-block">
+<div class="line">definition of <em>productionTask</em> with passing the input parameters and the process step</div>
+<div class="line">requirements for the sub tasks</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td><p>115-173</p></td>
+<td><p>definition of sub tasks</p></td>
+</tr>
+</tbody>
+</table>
+<p>As it cannot be assumed that a licensed installation of Visual Components is available at this point, a different approach is chosen to emulate the connection to a simulation environment. The following command can be executed to start a docker container that terminates the called skills in an automated and illustrative way:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>compose<span class="w"> </span>-f<span class="w"> </span>docker-compose-simulation-web-server.yml<span class="w"> </span>-p<span class="w"> </span>advanced<span class="w"> </span>up<span class="w"> </span>-d
+</pre></div>
+</div>
+<p>The container also displays a corresponding image in the browser when a skill is called up and automatically terminates the skill after 5 seconds in order to continue to the next step. To do this, it is only necessary to click on the following link. Provided the container is running, a window then opens in the browser in which the images are displayed.</p>
+<p><a class="reference external" href="https://localhost:4000">Image server</a></p>
+<p>In a split screen view for the first service it looks like this:</p>
+<figure class="align-center" id="id11">
+<img alt="../_images/dashboard_simulation_web_server_advanced.PNG" src="../_images/dashboard_simulation_web_server_advanced.PNG" />
+<figcaption>
+<p><span class="caption-text"><em>Dashboard</em> view with petri net at the top and simulation web server at the bottom in split screen view</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="demonstration-of-resource-allocation-at-runtime">
+<h2>Demonstration of resource allocation at runtime<a class="headerlink" href="#demonstration-of-resource-allocation-at-runtime" title="Link to this heading"></a></h2>
+<p>As promised in <a class="reference internal" href="02_overview_introduction.html"><span class="doc">Introduction to Use Case</span></a> at this point the assignment of services to specific assets at runtime will be demonstrated.</p>
+<p>The next table lists the assets that are suitable to execute the service of each process step.</p>
+<table class="docutils align-default" id="id12">
+<caption><span class="caption-text">Overview of assets for the main services</span><a class="headerlink" href="#id12" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 25.0%" />
+<col style="width: 25.0%" />
+<col style="width: 25.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>PrintingService</p></th>
+<th class="head"><p>MillingService</p></th>
+<th class="head"><p>ScanningService</p></th>
+<th class="head"><p>AssemblingService</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>SeamHex</p></td>
+<td><p>Comau</p></td>
+<td><p>CMM</p></td>
+<td><p>BioiC</p></td>
+</tr>
+<tr class="row-odd"><td></td>
+<td><p>RoboOperator / Maho</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td></td>
+<td><p>DMU</p></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>It can be seen, that for the <em>MillingService</em> there are three possible assets, that can execute the service: Comau, RoboOperator with Maho, DMU</p>
+<p>They are configured as follows with <em>costs</em> and <em>milling_precision</em>.</p>
+<table class="docutils align-default" id="id13">
+<caption><span class="caption-text">Production <em>costs</em> and <em>milling_precision</em> of milling assets</span><a class="headerlink" href="#id13" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 25.0%" />
+<col style="width: 25.0%" />
+<col style="width: 25.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Property</p></th>
+<th class="head"><p>Comau</p></th>
+<th class="head"><p>RoboOperator/Maho</p></th>
+<th class="head"><p>DMU</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>costs</p></td>
+<td><p>10</p></td>
+<td><p>100</p></td>
+<td><p>1000</p></td>
+</tr>
+<tr class="row-odd"><td><p>milling_precision</p></td>
+<td><p>1</p></td>
+<td><p>0.1</p></td>
+<td><p>0.01</p></td>
+</tr>
+</tbody>
+</table>
+<p>The <em>Assignment Agent</em> will choose the asset that fullfils the requirements of the PFDL:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">millingTask</span>
+<span class="linenos"> 2</span><span class="n">In</span>
+<span class="linenos"> 3</span>    <span class="n">MillingParameters</span>
+<span class="linenos"> 4</span>    <span class="p">{</span>
+<span class="linenos"> 5</span>        <span class="s2">&quot;part_id&quot;</span> <span class="p">:</span> <span class="p">{</span>
+<span class="linenos"> 6</span>            <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;1&quot;</span>
+<span class="linenos"> 7</span>        <span class="p">},</span>
+<span class="linenos"> 8</span>        <span class="s2">&quot;nc_program&quot;</span> <span class="p">:</span> <span class="p">{</span>
+<span class="linenos"> 9</span>            <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;C:</span><span class="se">\\</span><span class="s2">data</span><span class="se">\\</span><span class="s2">Test.nc&quot;</span>
+<span class="linenos">10</span>        <span class="p">}</span>
+<span class="linenos">11</span>    <span class="p">}</span>
+<span class="linenos">12</span>    <span class="n">MillingService_Capabilities</span>
+<span class="linenos">13</span>    <span class="p">{</span>
+<span class="linenos">14</span>        <span class="s2">&quot;milling_precision&quot;</span><span class="p">:</span> <span class="s2">&quot;0.05&quot;</span>
+<span class="linenos">15</span>    <span class="p">}</span>
+<span class="linenos">16</span><span class="n">Out</span>
+<span class="linenos">17</span>    <span class="n">success</span><span class="p">:</span> <span class="n">PfdlBoolean</span>
+</pre></div>
+</div>
+<p>From all assets that fullfil the requirements, that one is chosen that has the minimal production <em>costs</em>.</p>
+<p>Now you try it! Change the <em>milling_precision</em> parameter in the <em>cps_demo.pfdl</em> start the process execution and see what will happen! Enjoy!</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="04_2_intermediate.html" class="btn btn-neutral float-left" title="Intermediate" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="05_how_to_guides.html" class="btn btn-neutral float-right" title="How-to-Guides" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Fraunhofer IWU.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(false);
+      });
+  </script> 
+
+</body>
+</html>
