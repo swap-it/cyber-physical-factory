@@ -15,6 +15,9 @@ The process is first implemented and tested with a simulation model and later tr
 
 Additional information about the SWAP-IT architecture, the _Cyber-Physical Factory_ use case, the SWAP-IT software modules and the utilization of the skill-based control framework can be found in the following sections of this documentation.
 
+## Documentation
+For a detailed explanation of the success story and fascinating tutorials on how to implement the architecture, visit our online documentation [Cyber-Physical Factory](https://swap-it.github.io/cyber-physical-factory/).
+
 ## License
 
 This project uses the *asyncua* library, which is licensed under the GNU Lesser General Public License v3.0 (LGPL-3.0). A copy of the LGPL-3.0 license is included in the LICENSE file.
